@@ -1,16 +1,10 @@
 package main
 
-import "fmt"
-
 func main() {
-	// card := "Ace of Spades"
-	cards := []string{newCard(), "Ace of Diamonds"}
-	// append do not return modified slice but return new copy of slice
+	cards := deck{newCard(), "Ace of Diamonds"}
 	cards = append(cards, "Six of Spades")
 
-	for i, card := range cards {
-		fmt.Println(i, card)
-	}
+	cards.print()
 }
 
 func newCard() string {
