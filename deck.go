@@ -48,11 +48,11 @@ func newDeckFromFile(fileName string) deck {
 
 	if err != nil {
 		// Option #1 : log the error and create return a call to newDeck()
-
 		// Option #2 : log the error and quit the program entirely
 		fmt.Println("Error:", err)
-		os.Exit(1)
+		os.Exit(404)
 	}
 
-	return bs
+	s := strings.Split(string(bs), ", ")
+	return deck(s)
 }
