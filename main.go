@@ -15,17 +15,14 @@ func main() {
 	colors := map[string]string{
 		"red":   "#ff0000",
 		"green": "#ff4582",
+		"white": "#ffffff",
 	}
 
-	for key, val := range colors {
-		fmt.Println(key, val)
+	printMap(colors)
+}
+
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Printf("Hex code for %v is %v \n", color, hex)
 	}
-
-	// add a key to a map
-	colors["white"] = "#ffffff"
-
-	// delete a key from a map
-	delete(colors, "red")
-
-	fmt.Println(colors)
 }
