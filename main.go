@@ -3,15 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	// cara inisialisasi variable bertipe map ada beberapa cara
-	// #1
-	// var colors map[string]string -> menghasilnya map kosong
-	// #2
-	// colors := make(map[string]string) -> menghasilnya map kosong
+	/*
+		kapan menggunakan struct atau map vice versa
 
-	// colors := make(map[string]string)
-	// colors["white"] = "#ffffff"
-
+		map semua nilainya dan keynya memiliki tipe yang sama sedangkan struct bisa berbeda
+	*/
 	colors := map[string]string{
 		"red":   "#ff0000",
 		"green": "#ff4582",
