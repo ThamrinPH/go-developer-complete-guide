@@ -2,23 +2,29 @@ package main
 
 import "fmt"
 
+type englishBot struct{}
+type spanishBot struct{}
+
 func main() {
-	/*
-		kapan menggunakan struct atau map vice versa
+	eb := englishBot{}
+	sb := spanishBot{}
 
-		map semua nilainya dan keynya memiliki tipe yang sama sedangkan struct bisa berbeda
-	*/
-	colors := map[string]string{
-		"red":   "#ff0000",
-		"green": "#ff4582",
-		"white": "#ffffff",
-	}
-
-	printMap(colors)
+	printGreeting(eb)
+	// printGreeting(sb)
 }
 
-func printMap(c map[string]string) {
-	for color, hex := range c {
-		fmt.Printf("Hex code for %v is %v \n", color, hex)
-	}
+func printGreeting(eb englishBot) {
+	fmt.Println(eb.getGreeting())
+}
+
+// func printGreeting(sb spanishBot) {
+// 	fmt.Println(sb.getGreeting())
+// }
+
+func (eb englishBot) getGreeting() string {
+	return "Hi There!"
+}
+
+func (sb spanishBot) getGreeting() string {
+	return "Hola"
 }
