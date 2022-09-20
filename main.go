@@ -13,16 +13,21 @@ func main() {
 		"https://www.golang.org/",
 		"https://www.amazon.com/",
 		"https://www.tokopedia.com/",
-		"https://www.shopee.com/",
+		"https://www.shopee.co.id/",
 	}
 
 	for _, link := range links {
-		resp, err := http.Get(link)
-
-		if err != nil {
-			fmt.Println("Error :", err)
-		}
-
-		fmt.Println(resp)
+		checkLink(link)
 	}
+}
+
+func checkLink(link string) {
+	_, err := http.Get(link)
+
+	if err != nil {
+		fmt.Println(link, "might be down!")
+		return
+	}
+
+	fmt.Println(link, "is up!")
 }
