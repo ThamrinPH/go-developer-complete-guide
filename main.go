@@ -28,8 +28,10 @@ func main() {
 	}
 
 	for l := range c {
-		time.Sleep(time.Minute)
-		go checkLink(l, c)
+		go func() {
+			time.Sleep(time.Minute)
+			checkLink(l, c)
+		}()
 	}
 
 }
@@ -45,4 +47,5 @@ func checkLink(link string, c chan string) {
 
 	fmt.Println(link, "is up!")
 	c <- link
+
 }
