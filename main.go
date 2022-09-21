@@ -7,14 +7,14 @@ import (
 
 func main() {
 	links := []string{
+		"https://www.bukalapak.com/",
+		"https://www.shopee.co.id/",
 		"https://www.google.com/",
+		"https://www.tokopedia.com/",
 		"https://www.facebook.com/",
 		"https://www.stackoverflow.com/",
 		"https://www.golang.org/",
 		"https://www.amazon.com/",
-		"https://www.tokopedia.com/",
-		"https://www.bukalapak.com/",
-		"https://www.shopee.co.id/",
 		"https://www.olx.co.id/",
 		"https://id.yahoo.com/",
 		"https://www.bumble.com/",
@@ -26,7 +26,10 @@ func main() {
 		go checkLink(link, c)
 	}
 
-	fmt.Println(<-c)
+	linksLen := len(links)
+	for i := 0; i < linksLen; i++ {
+		fmt.Println(i+1, ".", <-c)
+	}
 
 }
 
