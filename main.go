@@ -28,10 +28,10 @@ func main() {
 	}
 
 	for l := range c {
-		go func() {
-			time.Sleep(time.Minute)
-			checkLink(l, c)
-		}()
+		go func(link string) {
+			time.Sleep(30 * time.Second)
+			checkLink(link, c)
+		}(l)
 	}
 
 }
